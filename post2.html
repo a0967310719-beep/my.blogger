@@ -3,55 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>期末考週的意外美景 | My Daily Life</title>
+    <title>期末考週的意外美景 | 拾光筆記</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&display=swap');
+        
         body { font-family: 'Noto Sans TC', sans-serif; }
+        .serif { font-family: 'Noto Serif TC', serif; }
+
+        /* 背景：像考卷一樣的微黃紙張感 */
+        .paper-bg {
+            background-color: #fcfaf7;
+            background-image: linear-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 100% 3rem; /* 橫線橫格紙 */
+        }
+
+        /* 螢光筆劃記效果 */
+        .highlight {
+            background: linear-gradient(104deg, rgba(254, 243, 199, 0) 0.9%, rgba(254, 243, 199, 1) 2.4%, rgba(254, 243, 199, 0.5) 5.8%, rgba(254, 243, 199, 0.1) 93%, rgba(254, 243, 199, 0.7) 96%, rgba(254, 243, 199, 0) 98%);
+            border-radius: 1em 0;
+            padding: 0.2rem 0.5rem;
+        }
+
+        /* 打字機動畫 */
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #6366f1;
+            white-space: nowrap;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(30, end), blink-caret .5s step-end infinite;
+        }
+
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #6366f1 } }
+
+        /* 滾動時浮現 */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s ease-out;
+        }
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body class="paper-bg text-gray-700 min-h-screen">
 
-<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
-    <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
-        <h1 class="text-xl font-bold tracking-tight text-indigo-600">Daily Life.</h1>
-        <div class="space-x-6 text-sm font-medium">
-            <a href="index.html" class="hover:text-indigo-500 transition">首頁</a>
-            <a href="#" class="hover:text-indigo-500 transition">關於我</a>
-            <a href="#" class="hover:text-indigo-500 transition">分類</a>
-        </div>
-    </div>
-</nav>
-
-<header class="max-w-4xl mx-auto px-4 py-16 text-center">
-    <h2 class="text-4xl font-extrabold text-gray-900 mb-4">期末考週的意外美景</h2>
-    <p class="text-gray-500 text-lg">總圖前的野餐午後，像電影般的校園情景</p>
-</header>
-
-<main class="max-w-4xl mx-auto px-4 pb-20">
-    <article class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden p-8">
-        <p class="text-gray-600 leading-relaxed mb-4">
-            總圖前的野餐午後，似乎帶領我到好萊屋電影的校園情節。
-            有的人享受午餐與陽光普照的氛圍，有的人與朋友談天說地，每個片刻都充滿溫暖與生活氣息。
-        </p>
-        <ul class="list-disc list-inside text-gray-600 mb-6">
-            <li><strong>學術成長：</strong>深入專業領域，提升研究與實務能力。</li>
-            <li><strong>語言與文化能力：</strong>提升外語能力，體驗不同文化。</li>
-            <li><strong>自我探索與成長：</strong>在陌生環境中磨練獨立性，建立成熟自我。</li>
-        </ul>
-        <a href="index.html" class="text-indigo-600 font-semibold flex items-center hover:translate-x-1 transition-transform">
-            回到首頁 <i data-lucide="arrow-left" class="w-4 h-4 ml-1"></i>
+    <nav class="fixed top-8 left-8 z-50">
+        <a href="index.html" class="group flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-sm border border-gray-100 hover:shadow-md transition">
+            <i data-lucide="arrow-left" class="w-4 h-4 text-gray-400 group-hover:-translate-x-1 transition-transform"></i>
+            <span class="text-xs font-bold tracking-widest text-gray-500 uppercase">Back</span>
         </a>
-    </article>
-</main>
+    </nav>
 
-<footer class="bg-white border-t border-gray-200 py-10 text-center text-gray-400 text-sm">
-    <p>© 2024 Your Name. Powered by Code & Coffee.</p>
-</footer>
+    <main class="max-w-2xl mx-auto px-6 pt-32 pb-32">
+        
+        <header class="mb-20">
+            <div class="inline-block px-2 py-1 bg-red-50 text-red-400 text-[10px] font-bold tracking-widest uppercase mb-4 mb-4">
+                Final Exam Week / Confidential
+            </div>
+            <h1 class="serif text-4xl font-bold text-gray-900 leading-tight mb-6">
+                期末考週的意外美景：<br>總圖前的野餐午後
+            </h1>
+            <div class="flex items-center text-xs font-mono text-gray-400 space-x-4">
+                <span>DATE: 2024.06.15</span>
+                <span>LOC: NTU Main Library</span>
+            </div>
+        </header>
 
-<script>
-    lucide.createIcons();
-</script>
+        <div class="space-y-12 text-lg leading-[3rem]"> <p class="reveal-on-scroll">
+                期末考週的校園，總是瀰漫著一種緊繃的氣氛，但今天走過總圖前，卻被眼前的景象稍微治癒了。
+            </p>
+
+            <p class="reveal-on-scroll">
+                午後的陽光灑在草皮上，那種畫面似乎帶領我進到了美國電影裡的校園情節。
+                在那裡，時間好像暫時慢了下來：有的人坐著享受午餐，有的人只是單純曬著太陽，
+                還有幾群朋友圍在一起談天說地，笑聲特別大。
+            </p>
+
+            <div class="reveal-on-scroll py-4">
+                <blockquote class="border-l-4 border-indigo-500 pl-6 italic text-gray-500">
+                    每個片刻都充滿了溫暖，那種很純粹的生活氣息，讓我不自覺地慢下腳步。
+                </blockquote>
+            </div>
+
+            <p class="reveal-on-scroll">
+                看著這一切，我便開始亂想。如果是在美國的校園，這種景象是不是更加稀鬆平常？
+                明明大家心裡都壓著考試和作業，但 <span class="highlight">此刻的陽光卻讓壓力顯得有點微不足道。</span>
+            </p>
+
+            <p class="reveal-on-scroll">
+                我開始思考，考試壓力這件事，除了讓我們焦慮之外，究竟在我們的生活裡充斥著什麼？
+                它或許是一種必經的過程，讓我們在混亂中試著找回一點秩序，或者只是讓我們更懂得珍惜這種難得的午後美景。
+            </p>
+
+            <p class="reveal-on-scroll bg-amber-50/50 p-6 border-dashed border-2 border-amber-200 rounded-lg">
+                這些壓力帶來的東西很難說清楚，但它確實構成了我們大學生活的一部分。
+                最後，我還是得把自己拉回現實。
+            </p>
+
+            <p class="reveal-on-scroll text-center text-indigo-600 font-bold py-10">
+                「我應該如何做才能不負這場陽光？」
+            </p>
+
+            <p class="reveal-on-scroll">
+                雖然嚮往電影般的悠閒，但眼前的筆記本提醒了我考試還沒結束。
+                我想，我應該做的是先好好感受這份陽光，然後帶著這點溫暖，繼續回去面對我的期末考。
+            </p>
+        </div>
+    </main>
+
+    <footer class="py-20 text-center text-gray-300 text-[10px] tracking-widest uppercase">
+        End of thoughts.
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // 滾動觀察器：當使用者滑到該區塊時才浮現文字
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
