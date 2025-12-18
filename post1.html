@@ -3,121 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>為什麼想要出國念書？ | My Daily Life</title>
+    <title>為什麼想要出國念書？ | 拾光筆記</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&display=swap');
-        body { font-family: 'Noto Sans TC', sans-serif; line-height: 1.8; }
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400&display=swap');
+        
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        .serif { font-family: 'Noto Serif TC', serif; }
+
+        /* 背景：延續筆記本質感，淡淡的藍色線條 */
+        .paper-bg {
+            background-color: #fafbfc;
+            background-image: linear-gradient(#f1f5f9 1px, transparent 1px);
+            background-size: 100% 2.8rem; 
+        }
+
+        /* 螢光筆劃記 (靛藍色版本) */
+        .highlight-blue {
+            background: linear-gradient(104deg, rgba(224, 231, 255, 0) 0.9%, rgba(224, 231, 255, 1) 2.4%, rgba(224, 231, 255, 0.5) 5.8%, rgba(224, 231, 255, 0.1) 93%, rgba(224, 231, 255, 0.7) 96%, rgba(224, 231, 255, 0) 98%);
+            border-radius: 1em 0;
+            padding: 0.1rem 0.4rem;
+        }
+
+        /* 滾動時浮現動畫 */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body class="paper-bg text-gray-700 min-h-screen">
 
-    <nav class="p-6 max-w-3xl mx-auto">
-        <a href="index.html" class="text-indigo-600 flex items-center font-medium hover:text-indigo-800 transition">
-            <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> 返回首頁
+    <nav class="fixed top-8 left-8 z-50">
+        <a href="index.html" class="group flex items-center gap-2 bg-white/90 backdrop-blur px-4 py-2 rounded-full shadow-sm border border-gray-100 hover:shadow-md transition">
+            <i data-lucide="arrow-left" class="w-4 h-4 text-indigo-400 group-hover:-translate-x-1 transition-transform"></i>
+            <span class="text-[10px] font-black tracking-[0.2em] text-gray-400 uppercase">Archive</span>
         </a>
     </nav>
 
-    <article class="max-w-3xl mx-auto px-6 py-10 bg-white shadow-sm rounded-3xl mb-20">
+    <main class="max-w-2xl mx-auto px-6 pt-32 pb-40">
         
-        <header class="mb-12">
-            <div class="flex items-center text-sm text-indigo-500 font-bold tracking-widest uppercase mb-4">
-                <span class="bg-indigo-50 px-3 py-1 rounded-full">留學夢想清單</span>
+        <header class="mb-24 reveal-on-scroll">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-indigo-50 text-indigo-500 text-[10px] font-black tracking-widest uppercase mb-6 rounded">
+                <i data-lucide="compass" class="w-3 h-3"></i> Dream Blueprint
             </div>
-            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">
-                今天決定開始寫部落格：為什麼想要出國念書？
+            <h1 class="serif text-4xl font-bold text-gray-900 leading-tight mb-8">
+                今天決定開始寫部落格：<br>為什麼想要出國念書？
             </h1>
-            <div class="flex items-center text-gray-400 text-sm">
-                <i data-lucide="clock" class="w-4 h-4 mr-2"></i>
-                <span>2025年12月01日</span>
-                <span class="mx-3">|</span>
-                <span>閱讀時間約 3 分鐘呵呵</span>
-            </div>
+            <div class="h-[2px] w-12 bg-indigo-600 mb-8"></div>
+            <p class="text-gray-400 text-sm font-mono tracking-tighter italic">
+                聊聊我想出國念書的理由，寫下出國留學的三大目標。
+            </p>
         </header>
 
-        <div class="text-gray-700 space-y-8 text-lg">
+        <div class="space-y-12 text-lg leading-[2.8rem]">
             
-            <p class="font-medium text-xl text-gray-600 italic border-l-4 border-indigo-200 pl-4">
-                「如果人生是一場球賽，我希望我的主場是在世界最高殿堂。」
+            <p class="reveal-on-scroll">
+                這是我第一篇正式的日記，想聊聊那個在心底醞釀已久的念頭——出國留學。
+                每當有人問我為什麼，我腦中浮現的不是一個答案，而是一連串對未來的 <span class="highlight-blue text-indigo-900 font-medium">不甘與嚮往</span>。
             </p>
 
-            <p>
-                這是我第一篇正式的日記，想聊聊那個在我心底醞釀已久的念頭——出國留學。
-                很多人問我，留在台灣讀書不是很好嗎？為什麼要跑去那麼遠的地方？
-                我想，這不僅是為了拿一個學位，更是為了給自己的青春一個交代。
+            <div class="reveal-on-scroll p-8 bg-white border border-gray-100 shadow-sm rounded-lg my-12 rotate-1">
+                <div class="space-y-6 text-base leading-relaxed text-gray-600">
+                    <p><strong>1、動機是什麼：</strong> 我熱愛體育，但我知道如果要學會如何將運動轉化為精密數據與商機，我必須去那個運動產業發展最成熟的地方看看。我想親身體驗國外是如何經營一場比賽，又是如何把運動做成一種深入人心的文化。</p>
+                    <p><strong>2、目標學校與科系：</strong> 目前目標非常明確，就是 <strong>Florida University (佛羅里達大學)</strong>，我想申請的是他們的 <strong>Sport Management and Analysis (運動管理與分析)</strong>。UF 不僅有頂尖的體育資源，數據分析更是我最看重的核心。</p>
+                    <p><strong>3、我的夢想：</strong> 說出來可能有點瘋狂，但我最終的夢想是：<strong>透過大學實習管道進入 NBA 工作</strong>。我並不滿足於只當一個螢幕前的觀眾，我想走進幕後，成為推動頂級賽事運行的一份子。</p>
+                </div>
+            </div>
+
+            <p class="reveal-on-scroll">
+                這不僅是為了拿一個學位，更是為了給自己的青春一個交代。
+                如果人生是一場球賽，我希望我的主場是在世界最高殿堂。
+                <span class="highlight-blue">這次留學，我給自己設定了三個必須達成的目標：</span>
             </p>
 
-            <section class="bg-indigo-50/50 p-8 rounded-2xl space-y-6">
-                <div>
-                    <h2 class="text-indigo-600 font-bold mb-2 flex items-center">
-                        <i data-lucide="target" class="w-5 h-5 mr-2"></i> 關於我的動機
-                    </h2>
-                    <p>
-                        其實動機很單純，就是「不甘於此」。我熱愛體育，但我知道如果要學會如何將運動轉化為精密數據與商機，我必須去那個運動產業發展最成熟的地方看看。我想親身體驗國外是如何經營一場比賽，又是如何把運動做成一種深入人心的文化。
-                    </p>
-                </div>
-
-                <div>
-                    <h2 class="text-indigo-600 font-bold mb-2 flex items-center">
-                        <i data-lucide="school" class="w-5 h-5 mr-2"></i> 夢想的起點：UF
-                    </h2>
-                    <p>
-                        目前的目標非常明確，就是 University of Florida (美國佛羅里達大學)。
-                        我想申請的是他們的Sport Management and Analysis (運動管理與分析)。
-                        UF 不僅有頂尖的體育資源，其數據分析課程更是我最看重的——在現代籃球中，數據就是致勝的代碼。
-                    </p>
-                </div>
-
-                <div>
-                    <h2 class="text-indigo-600 font-bold mb-2 flex items-center">
-                        <i data-lucide="trophy" class="w-5 h-5 mr-2"></i> 我的終極夢想
-                    </h2>
-                    <p>
-                        說出來可能有點瘋狂，但我最終的夢想是：透過大學提供的實習管道，一步步爭取進入 NBA 工作的機會。
-                        我並不滿足於只當一個螢幕前的觀眾，我想走進幕後，成為推動頂級賽事運行的一份子。
-                    </p>
-                </div>
-            </section>
-
-            <h3 class="text-2xl font-bold text-gray-900 mt-12">若有機會申請上，我給自己設定了三大目標：</h3>
-            
-            <div class="space-y-6">
-                <div class="flex items-start">
-                    <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mr-4 mt-1 font-bold">1</div>
+            <div class="space-y-8 pt-4">
+                <div class="reveal-on-scroll flex gap-4">
+                    <div class="font-bold text-indigo-500 serif italic text-2xl">01.</div>
                     <div>
-                        <h4 class="font-bold text-xl mb-1 text-gray-800">學術成長</h4>
-                        <p>深入運動分析專業領域，不再只是看熱鬧，而是能提升研究與實務能力，學會用數據解構每一場精彩賽事。</p>
+                        <strong class="text-gray-900 block text-xl mb-1">學術成長</strong>
+                        <p class="text-gray-500 text-base leading-relaxed">深入專業領域，提升研究與實務能力。不再只是看熱鬧，而是能提升研究與實務能力，學會用數據解構每一場精彩賽事。</p>
                     </div>
                 </div>
 
-                <div class="flex items-start">
-                    <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mr-4 mt-1 font-bold">2</div>
+                <div class="reveal-on-scroll flex gap-4">
+                    <div class="font-bold text-indigo-500 serif italic text-2xl">02.</div>
                     <div>
-                        <h4 class="font-bold text-xl mb-1 text-gray-800">語言與文化能力</h4>
-                        <p>提升外語能力是基本，更重要的是體驗不同文化間的碰撞。我想看看美國大學那種瘋狂的運動氛圍，並學習如何與來自世界各地的人共事。</p>
+                        <strong class="text-gray-900 block text-xl mb-1">語言與文化能力</strong>
+                        <p class="text-gray-500 text-base leading-relaxed">提升外語能力，體驗不同文化。我想看看美國大學那種瘋狂的運動氛圍，並學習如何與來自世界各地的人共事。</p>
                     </div>
                 </div>
 
-                <div class="flex items-start">
-                    <div class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mr-4 mt-1 font-bold">3</div>
+                <div class="reveal-on-scroll flex gap-4">
+                    <div class="font-bold text-indigo-500 serif italic text-2xl">03.</div>
                     <div>
-                        <h4 class="font-bold text-xl mb-1 text-gray-800">自我探索與成長</h4>
-                        <p>在完全陌生的環境中磨練獨立性。離開舒適圈很難，但也只有這樣，才能磨練出成熟的自我，學會一個人面對所有挑戰。</p>
+                        <strong class="text-gray-900 block text-xl mb-1">自我探索與成長</strong>
+                        <p class="text-gray-500 text-base leading-relaxed">在陌生環境中磨練獨立性，建立成熟自我。離開舒適圈很痛，但也只有這樣，才能磨練出成熟的自我，學會一個人面對所有挑戰。</p>
                     </div>
                 </div>
             </div>
 
-            <p class="pt-10 text-gray-500 italic">
-                這條路可能比想像中難走，但既然球已經帶到了三分線，不投投看怎麼知道會不會進呢？
+            <p class="reveal-on-scroll text-center py-20 font-light italic text-gray-400">
+                這條路可能比想像中難走，但既然球已經帶到了三分線，<br>不投投看怎麼知道會不會進呢？
             </p>
         </div>
-    </article>
+    </main>
 
-    <footer class="py-12 text-center text-gray-400 text-sm">
-        <p>© 2025 Eddie. Go Gators! 🐊</p>
+    <footer class="py-20 text-center text-gray-300 text-[9px] tracking-[0.4em] uppercase border-t border-gray-100 mx-10">
+        Go Gators! 🐊 | Persistence is the key.
     </footer>
 
-    <script>lucide.createIcons();</script>
+    <script>
+        lucide.createIcons();
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
